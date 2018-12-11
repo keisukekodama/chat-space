@@ -28,7 +28,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false,add_index|
 |email|string|null: false, unique: true|
-|encrypted_password|string|null: false|
+|password|string|null: false|
 
 ### Association
 - has_many :chats
@@ -48,9 +48,11 @@ has_many :users, through: :members
 ## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: ture|
 |image|string|
 |text|text|null: false|
+
 
 ### Association
 belongs_to :user
