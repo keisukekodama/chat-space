@@ -26,12 +26,12 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
+|name|string|null: false,add_index|
+|email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
 
 ### Association
-- belongs_to :chat
+- has_many :chats
 has_many :members
 has_many :groups, through: :members
 
@@ -39,10 +39,9 @@ has_many :groups, through: :members
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :chat
+- has_many :chats
 has_many :members
 has_many :users, through: :members
 
@@ -50,18 +49,18 @@ has_many :users, through: :members
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|image|string|null: false|
+|image|string|
 |text|text|null: false|
 
 ### Association
-has_many :users
-has_many :groups
+belongs_to :user
+belongs_to :group
 
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
