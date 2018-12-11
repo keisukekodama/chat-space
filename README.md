@@ -22,6 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -30,20 +31,18 @@ Things you may want to cover:
 |encrypted_password|string|null: false|
 
 ### Association
-belongs_to :chat
+- belongs_to :chat
 has_many :members
 has_many :groups, through: :members
 
 ## groupsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
-belongs_to :chat
+- belongs_to :chat
 has_many :members
 has_many :users, through: :members
 
@@ -54,19 +53,15 @@ has_many :users, through: :members
 |image|string|null: false|
 |text|text|null: false|
 
-
 ### Association
-has_many :user
-has_many :group
-
-
+has_many :users
+has_many :groups
 
 ## membersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
