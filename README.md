@@ -26,14 +26,14 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,index: ture|
+|name|string|null: false,index: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 
 ### Association
 - has_many :chats
-has_many :members
-has_many :groups, through: :members
+- has_many :members
+- has_many :groups, through: :members
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -42,8 +42,8 @@ has_many :groups, through: :members
 
 ### Association
 - has_many :chats
-has_many :members
-has_many :users, through: :members
+- has_many :members
+- has_many :users, through: :members
 
 ## chatsテーブル
 |Column|Type|Options|
@@ -54,8 +54,8 @@ has_many :users, through: :members
 |text|text|
 
 ### Association
-belongs_to :user
-belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## membersテーブル
 |Column|Type|Options|
