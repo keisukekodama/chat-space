@@ -1,0 +1,55 @@
+
+
+.notification
+  .succes チャットグループが作成されました
+
+.chat-side
+  .chat-side__user
+    .chat-side__user--content
+      .chat-side__user--content-name
+        kodaf
+      %a.chat-side__user--new-group
+        %i.fas.fa-pen-square
+      %a.chat-side__user--edit-user
+        %i.fa.fa-cog
+
+  .chat-side__groups
+    .chat-side__groups--list
+      .chat-side__groups--list-group
+        .chat-side__groups--list-group-name
+          group.name
+        .chat-side__groups--list-group-message
+          top.messages
+
+.chat-main
+  .chat-main__header
+    .chat-main__header--group
+      .chat-main__header--group-name
+        group.name
+      .chat-main__header--group-edit-btn
+        edit
+    .chat-main__header--members
+      MEMBER
+      %i kodama
+  .chat-main__body
+    .chat-main__body--messages-list
+      //.chat-main__body--messages-list-message
+      .chat-main__body--messages-list-name
+        kodama
+      .chat-main__body--messages-list-time
+        18/12/13 18:40
+      .chat-main__body--messages-list-body
+        test
+        .chat-main__message-body-image
+  .chat-main__footer
+    .chat-main__footer-form{id: 'new_message'}
+      #new_message
+      .chat-main__footer-body
+        %input.message{placeholder: 'type a message',type: 'text',name: 'message[body]',id: 'message_body'}
+        %label.chat-file
+          %input.image{ type: 'file', name:'message[image]' ,id:'message_image'}
+            %i.fas.fa-image
+      %input.chat-main__footer-body-submit{type: 'submit', name: 'commit', value: 'Send'}
+
+
+
