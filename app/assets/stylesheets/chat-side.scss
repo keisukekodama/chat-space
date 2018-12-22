@@ -1,3 +1,4 @@
+$defa: #fff ;
 .chat-side {
   height: 100vh;
   width: 300px;
@@ -17,7 +18,7 @@
       top: 0;
       bottom: 0;
       &-name{
-        color: #fff;
+        color: $defa;
         font-size: 20px;
         font-weight: bold;
         margin: 0 20px;
@@ -25,13 +26,13 @@
         display: inline-block;
       }
       &-group{
-        color: #fff;
+        color: $defa;
         margin-left: 70px;
         position: relative;
         display: inline-block;
       }
       &-user{
-        color: #fff;
+        color: $defa;
         position: relative;
         display: inline-block;
       }
@@ -44,7 +45,7 @@
     color: white;
     &--list{
       height: 100%;
-      color: #fff;
+      color: $defa;
       &-group{
         padding: 20px;
         &-name{
