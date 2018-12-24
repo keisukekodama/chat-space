@@ -1,4 +1,3 @@
-$blue-l: #38AEF0 ;
 .chat-main{
   height: 100vh;
   width: calc( 100vw - 300px );
@@ -15,7 +14,7 @@ $blue-l: #38AEF0 ;
         float: left;
       }
       &-edit-btn{
-        color: $blue-l;
+        color: $light_blue;
         font-size: 15px;
         padding: 12.5px 20px;
         margin: 28px 20px 0;
@@ -92,7 +91,7 @@ $blue-l: #38AEF0 ;
         width: 100px;
         height: 50px;
         text-align: center;
-        background-color: $blue-l;
+        background-color: $light_blue;
         margin: 20px 0;
         position: absolute;
         top: 0;
