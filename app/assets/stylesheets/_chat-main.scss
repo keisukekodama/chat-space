@@ -1,0 +1,103 @@
+.chat-main{
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+  &__header{
+    height: 118px;
+    border: 1px solid #eee;
+    &--group{
+      margin: 0px 40px;
+      &-name{
+        color: #333;
+        font-size: 20px;
+        margin: 35px 0 15px;
+        float: left;
+      }
+      &-edit-btn{
+        color: $light_blue;
+        font-size: 15px;
+        padding: 12.5px 20px;
+        margin: 28px 20px 0;
+        border: 1px solid $blue-l;
+        float: right;
+      }
+    }
+    &--members{
+      color: #999;
+      font-size: 12px;
+      margin: 85px 40px;
+    }
+  }
+  &__body{
+    height: calc( 100vh - 15% - 90px );
+    overflow-y: scroll;
+    &--messages-list{
+      padding-top: 46px;
+      padding-left: 40px;
+      &-name{
+        color: #434A54;
+        font-size: 16px;
+        font-weight: bold;
+        float: left;
+      }
+      &-time{
+        color: #999;
+        font-size: 12px;
+        padding: 0 10px 10px;
+        float: left;
+      }
+      &-body{
+        color: #434A54;
+        clear: both;
+      }
+    }
+  }
+  &__footer{
+    height: 90px;
+    width: 100%;
+    background-color: #B8C3C7;
+    &-form{
+      margin: 0 40px;
+      position: relative;
+    }
+    &-body{
+      position: relative;
+      input{
+        height: 50px;
+        width: calc( 100% - 130px );
+        margin: 20px 0;
+        border: none;
+      }
+      label{
+        height: 50px;
+        width: 40px;
+        margin: 15px 130px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      &--image{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: none;
+        i{
+          color: black;
+          margin: 10px 0px;
+        }
+      }
+      &-submit{
+        color: #fff;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        background-color: $light_blue;
+        margin: 20px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+      }
+    }
+  }
+}
