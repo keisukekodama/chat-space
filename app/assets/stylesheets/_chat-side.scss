@@ -1,4 +1,6 @@
 .chat-side {
+  box-sizing: border-box;
+  color: $white;
   height: 100vh;
   width: 300px;
   float: left;
@@ -16,6 +18,9 @@
       position: absolute;
       top: 0;
       bottom: 0;
+.icon {
+        color: $white;
+      }
       &-name{
         color: $white;
         font-size: 20px;
@@ -38,20 +43,21 @@
     }
   }
   &__groups{
-    height: 85%;
-    width: 100%;
-    background-color: #253141;
-    color: white;
+   background-color: $side_blue_light;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    padding: 0 20px;
     &--list{
-      height: 100%;
-      color: $white;
       &-group{
-        padding: 20px;
+         box-sizing: border-box;
+      padding: 20px 0 40px;
         &-name{
           font-size: 15px;
+          color: $white;
         }
         &-message{
           font-size: 11px;
+          color: $white;
         }
       }
     }
