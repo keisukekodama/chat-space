@@ -9,20 +9,12 @@
       MEMBER
       %list kodama
   .chat-main__body
-    .chat-main__body--messages-list
-      .chat-main__body--messages-list-name
-        kodama
-      .chat-main__body--messages-list-time
-        18/12/13 18:40
-      .chat-main__body--messages-list-body
-        test
-        .chat-main__message-body-image
-  .chat-main__footer
-    .chat-main__footer-form{id: 'new_message'}
-      #new_message
-      .chat-main__footer-body
-        %input.message{placeholder: 'type a message',type: 'text',name: 'message[body]',id: 'message_body'}
-        %label.chat-file
-          %input.image{ type: 'file', name:'message[image]' ,id:'message_image'}
-            = fa_icon 'image'
-      %input.chat-main__footer-body-submit{type: 'submit', name: 'commit', value: 'Send'}
+    =render @messages
+  .chat-main__bottom--form
+    = form_for [@group, @message] , html: {class: 'new_message'} do |f|
+      = f.text_field :content, class: 'chat-main__bottom--form--textbox', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'chat-main__bottom--form-image-upload-button' do
+          = fa_icon 'image', class: 'icon'
+          = f.file_field :image, class: 'message-image chat-main__bottom--form-upload-icon hidden'
+      = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn'
