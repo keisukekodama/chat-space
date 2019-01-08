@@ -2,12 +2,13 @@
   .chat-main__header
     .chat-main__header--group
       .chat-main__header--group-name
-        group.name
+        = @group.name
       .chat-main__header--group-edit-btn
         edit
     .chat-main__header--members
       MEMBER
-      %list kodama
+      - @group.users.each do|user|
+        = user.name
   .chat-main__body
     =render @messages
   .chat-main__bottom--form
