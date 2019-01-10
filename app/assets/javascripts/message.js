@@ -39,14 +39,15 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
+      var hoge = $('#hoge').prop('disabled', false);
       $('.chat-main__body').append(html)
       $('.chat-main__bottom--form--textbox').val('')
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
-      $('#hoge').prop('disabled', false);
+      hoge
     })
     .fail(function(data) {
       alert('error');
-      $('#hoge').prop('disabled', false);
+      hoge
     })
   })
 });
