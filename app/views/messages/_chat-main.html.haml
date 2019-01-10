@@ -7,7 +7,7 @@
         edit
     .chat-main__header--members
       MEMBER
-      - @group.users.each do|user|
+      - @group.users.each do |user|
         = user.name
   .chat-main__body
     =render @messages

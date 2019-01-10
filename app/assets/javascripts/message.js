@@ -1,12 +1,11 @@
 $(function(){
   function buildHTML(message){
-    var image = (message.image) ? `<img src="${message.image}">` : `` //これはなに？
     var html =
     `
     <div class="message">
       <div class="chat-main__body--messages-list">
          <div class="chat-main__body--messages-list-name">
-            ${message.name}
+            ${message.user_name}
          </div>
          <div class="chat-main__body--messages-list-time">
             ${message.date}
@@ -15,11 +14,15 @@ $(function(){
            <div class="chat-main__message-body-image">
               ${message.content}
            </div>
-              ${image}
          </div>
       </div>
     </div>
     `
+    if(message.image != null){
+        html +=  `<div class="message_text">
+                  <img class="lower-message__image" src="${message.image}">
+                  </div>`
+                }
     return html;
   }
   $('.new_message').on('submit', function(e){
@@ -40,10 +43,10 @@ $(function(){
       $('.chat-main__bottom--form--textbox').val('')
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
       $('#hoge').prop('disabled', false);
-
     })
     .fail(function(data) {
       alert('error');
+      $('#hoge').prop('disabled', false);
     })
   })
 });
