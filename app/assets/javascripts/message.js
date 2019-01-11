@@ -37,17 +37,17 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
+    .done(function(data) {
       var html = buildHTML(data);
-      var abled = $('#send').prop('disabled', false);
       $('.chat-main__body').append(html)
       $('.chat-main__bottom--form--textbox').val('')
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
-      abled
     })
     .fail(function() {
       alert('error');
-      abled
+    })
+    .always(function () {
+    $('#send').removeAttr("disabled");
     })
   })
 });
