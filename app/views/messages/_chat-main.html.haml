@@ -7,7 +7,7 @@
         edit
     .chat-main__header--members
       MEMBER
-      - @group.users.each do|user|
+      - @group.users.each do |user|
         = user.name
   .chat-main__body
     =render @messages
@@ -18,4 +18,4 @@
         = f.label :image, class: 'chat-main__bottom--form-image-upload-button' do
           = fa_icon 'image', class: 'icon'
           = f.file_field :image, class: 'message-image chat-main__bottom--form-upload-icon hidden'
-      = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn'
+      = f.submit 'Send', class: 'form__submit chat-main__bottom--form--group-edit-btn', id: 'send'
