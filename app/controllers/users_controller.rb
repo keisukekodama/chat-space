@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
 
   def index
+    @indexs = User.where("name LIKE(?) AND (id != ?)","%#{params[:keyword]}%", current_user.id).limit(20)
+    respond_to do |format|
+     format.json
   end
+end
 
 
   def edit
