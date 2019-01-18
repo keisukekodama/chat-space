@@ -1,28 +1,30 @@
 $(function(){
   function buildHTML(message){
+    var image = '';
+    if (message.image){
+image = `<img src="${ message.image }">`;
+    }
     var html =
     `
-    <div class="message">
-      <div class="chat-main__body--messages-list">
-         <div class="chat-main__body--messages-list-name">
-            ${message.user_name}
-         </div>
-         <div class="chat-main__body--messages-list-time">
-            ${message.date}
-         </div>
-         <div class="chat-main__body--messages-list-body">
-           <div class="chat-main__message-body-image">
-              ${message.content}
-           </div>
-         </div>
+    <div class="message"  data-message-id="${message.id}">
+      <div class="chat-main__body--messages-list" >
+        <div class="chat-main__body--messages-list-name">
+          ${message.user_name}
+        </div>
+        <div class="chat-main__body--messages-list-time">
+          ${message.date}
+        </div>
+        <div class="chat-main__body--messages-list-body">
+          <div class="chat-main__message-body-content">
+            ${message.content}
+          </div>
+            <div>
+              ${image}
+            </div>
+        </div>
       </div>
     </div>
     `
-    if(message.image != null){
-        html +=  `<div class="message_text">
-                  <img class="lower-message__image" src="${message.image}">
-                  </div>`
-                }
     return html;
   }
   $('.new_message').on('submit', function(e){
@@ -44,7 +46,7 @@ $(function(){
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
-      alert('error');
+      alert('errorです');
     })
     .always(function () {
     $('#send').removeAttr("disabled");
