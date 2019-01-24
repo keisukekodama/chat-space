@@ -42,6 +42,12 @@ server '54.92.62.121', user: 'ec2-user', roles: %w{app db web}
 #
 # Global options
 # --------------
+set :ssh_options, {
+  port: 3000,
+  keys: [File.expand_path('~/.ssh/keisuke.pem')],
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
 #  set :ssh_options, {
 #    keys: %w(/home/rlisowski/.ssh/id_rsa),
 #    forward_agent: false,
