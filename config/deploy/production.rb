@@ -42,17 +42,12 @@ server '54.92.62.121', user: 'ec2-user', roles: %w{app db web}
 #
 # Global options
 # --------------
-set :ssh_options, {
-  port: 3000,
-  keys: ['~/.ssh/keisuke.pem'],
-  forward_agent: true,
-  auth_methods: %w(publickey)
-}
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+# set :ssh_options, {
+#   port: 3000,
+#   keys: ['~/.ssh/keisuke.pem'],
+#   forward_agent: true,
+#   auth_methods: %w(publickey)
+# }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
