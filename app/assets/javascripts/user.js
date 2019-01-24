@@ -18,7 +18,7 @@ function appendNoIndex(index) {
   }
   function addIndexToGroup(userId, userName) {
     var html = `
-  <div class='chat-group-user clearfix js-chat-member'>
+  <div class='chat-group-user clearfix '>
   <input name='group[user_ids][]' type='hidden' value='${userId}'>
   <p class='chat-group-user__name'>${userName}</p>
   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>

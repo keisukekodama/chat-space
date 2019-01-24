@@ -60,3 +60,6 @@ gem 'pry-byebug'
 gem 'pry-doc'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+
+  gem 'unicorn'
+
