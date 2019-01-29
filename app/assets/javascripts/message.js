@@ -46,7 +46,7 @@ image = `<img src="${ message.image }">`;
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
-      alert('errorです');
+      alert('送信errorです');
     })
     .always(function () {
     $('#send').removeAttr("disabled");
