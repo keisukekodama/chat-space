@@ -68,6 +68,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'rb-readline'
 gem 'bootsnap'
+
 group :production do
 gem 'unicorn'
 end
