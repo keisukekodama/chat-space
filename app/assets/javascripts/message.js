@@ -28,6 +28,7 @@ image = `<img src="${ message.image }">`;
     return html;
   }
   $('.new_message').on('submit', function(e){
+    // console.log("非同期")
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -40,6 +41,7 @@ image = `<img src="${ message.image }">`;
       contentType: false
     })
     .done(function(data) {
+      // console.log("非同期done")
       var html = buildHTML(data);
       $('.chat-main__body').append(html)
       $('.chat-main__bottom--form--textbox').val('')

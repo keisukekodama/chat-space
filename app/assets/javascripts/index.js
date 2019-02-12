@@ -28,24 +28,29 @@ image = `<img src="${ message.image }">`;
     return html;
   }
   var interval = setInterval(function(){
+    // console.log("自動更新")
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
       var messageId = $('.message:last').data('message-id') || 0
+
       $.ajax({
-        url:  location.href,
+        url: location.href,
         type: 'GET',
         data: {
           id: messageId
         },
-        dataType: 'json'
+        dataType: 'json',
       })
       .done(function(data) {
+        // console.log("自動更新done")
+        if (data.length > 0){
         var addHtml ='';
         data.forEach(function(message){
           addHtml += buildHTML(message);
         });
         $('.chat-main__body').append(addHtml)
         $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'slow');
-      })
+      }
+       })
       .fail(function() {
         alert('自動更新error')
       });

@@ -12,7 +12,7 @@ searchList.append(html);
 }
 function appendNoIndex(index) {
     var html = `
-                  <div class='listview__element--right-icon'>${ index }</div>
+<div class='listview__element--right-icon'>${ index }</div>
 `
     search_list.append(html);
   }
@@ -27,17 +27,19 @@ function appendNoIndex(index) {
     $("#chat-group-users").append(html);
   }
   $("#iuser-search-field").on("keyup", function(){
+    // console.log("インクル")
     var input = $("#iuser-search-field").val();
     $.ajax({
       type:'GET',
       url: '/users',
       data: { keyword: input },
-      dataType: 'json'
+      dataType: 'json',
     })
-  .done(function(indexs) {
+  .done(function(index) {
+    // console.log("インクルdone")
     searchList.empty();
-     if (indexs.length !== 0) {
-       indexs.forEach(function(index){
+     if (index.length !== 0) {
+       index.forEach(function(index){
          appendIndex(index);
        });
      }
@@ -51,12 +53,14 @@ function appendNoIndex(index) {
   });
 });
   searchList.on("click",".user-search-add",function(){
+    // console.log("追加")
     var userId = $(this).attr("data-user-id");
     var userName = $(this).attr("data-user-name");
 addIndexToGroup(userId, userName);
 $(this).parent().remove();
   })
   $("#chat-group-users").on("click",".user-search-remove",function(){
+    // console.log("削除")
 $(this).parent().remove();
 })
 });
