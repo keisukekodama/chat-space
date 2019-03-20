@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+ # before_action :set_group
   def new
     @group = Group.new
     @group.users << current_user
@@ -14,6 +15,7 @@ class GroupsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループを編集しました'
     else
@@ -21,10 +23,14 @@ class GroupsController < ApplicationController
     end
   end
 
+   def edit
+    @group = Group.find(params[:id]) #これがないと[ArgumentError in Groups#edit]と表示される。
+   end
+
 
   private
   def group_params
-    params.require(:group).permit(:name, { :user_ids => [] })
+    params.require(:group).permit(:name, :user_ids => [] )#params.require.permitの順で階層になっている。送り手はviewの%input{name: 'group[user_ids][]',type: 'hidden', value: current_user.id}で定義されている。
   end
 
   def set_group

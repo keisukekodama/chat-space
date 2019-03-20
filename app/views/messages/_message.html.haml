@@ -7,5 +7,5 @@
     .chat-main__body--messages-list-body
       - if message.content.present?
         .chat-main__message-body-content
-          = message.content
+          = simple_format(message.content)
       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

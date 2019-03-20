@@ -1,0 +1,1 @@
+このファイルないとbundle exec rspec spec/models/message_spec.rbでエラー出る

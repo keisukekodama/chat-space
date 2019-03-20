@@ -1,9 +1,8 @@
 $(function(){
   function buildHTML(message){
-    var image = '';
-    if (message.image){
-image = `<img src="${ message.image }">`;
-    }
+    var image = '';if (message.image){image = `<img src="${ message.image }">`;}
+    // var message_image = message.image ? message.image : ""
+    // <img class: 'lower-message__image' src='${message_image}'>これを代入。
     var html =
     `
     <div class="message"  data-message-id="${message.id}">
@@ -31,7 +30,7 @@ image = `<img src="${ message.image }">`;
     // console.log("非同期")
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action') //グループごとにurlが違うのでページのアクションを取得している
     $.ajax({
       url: url,
       type: "POST",
@@ -42,9 +41,10 @@ image = `<img src="${ message.image }">`;
     })
     .done(function(data) {
       // console.log("非同期done")
+      //if (data.length !==0){}で
       var html = buildHTML(data);
       $('.chat-main__body').append(html)
-      $('.chat-main__bottom--form--textbox').val('')
+      $('.chat-main__bottom--form--textbox,#message_image').val('')
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
     })
     .fail(function() {

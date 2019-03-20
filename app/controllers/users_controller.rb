@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
 
   def index
-     # binding.pry
-    @indexs = User.where("name LIKE(?) AND (id != ?)","%#{params[:keyword]}%", current_user.id).limit(20)
+     @indexs = User.where("name LIKE(?) AND (id != ?)","%#{params[:keyword]}%", current_user.id).limit(20)#あいまい検索と現在のログインユーザーを弾いている。
+    # User.where("name LIKE(?)","%#{params[:keyword]}%").not(current_user).limit(20)
     respond_to do |format|
      format.json
   end

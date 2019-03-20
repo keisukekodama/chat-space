@@ -35,16 +35,15 @@ image = `<img src="${ message.image }">`;
       $.ajax({
         url: location.href,
         type: 'GET',
-        data: {
-          id: messageId
-        },
+        data: {id: messageId},
         dataType: 'json',
       })
       .done(function(data) {
-        // console.log("自動更新done")
-        if (data.length > 0){
+        console.log("自動更新done")
+        console.log(data)
+         if (data.length > 0){
         var addHtml ='';
-        data.forEach(function(message){
+        data.forEach(function(message){//dataが複数なのでforEachで単数に変える。
           addHtml += buildHTML(message);
         });
         $('.chat-main__body').append(addHtml)
