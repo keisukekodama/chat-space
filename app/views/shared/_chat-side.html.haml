@@ -8,6 +8,8 @@
           = fa_icon 'edit', class: 'icon'
       %a.chat-side__user--edit-user
         = link_to edit_user_path(current_user) do
+
+          / 引数（ここではcurrent_user)がないと、ActionController::UrlGenerationError in Messages#index とでる。
           = fa_icon 'cog', class: 'icon'
 
   .chat-side__groups

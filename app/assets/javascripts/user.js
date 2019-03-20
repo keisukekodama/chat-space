@@ -28,10 +28,11 @@ function appendNoIndex(index) {
   }
   $("#iuser-search-field").on("keyup", function(){
     // console.log("インクル")
-    var input = $("#iuser-search-field").val();
+    var input = $("#iuser-search-field").val()
+    // console.log(input);
     $.ajax({
       type:'GET',
-      url: '/users',
+      url: '/users',// 動かしたいアクションのパスを指定。rake routeで確認できる。
       data: { keyword: input },
       dataType: 'json',
     })
@@ -43,10 +44,10 @@ function appendNoIndex(index) {
          appendIndex(index);
        });
      }
-     else {
-      searchList.empty();
-       appendNoIndex("一致するユーザーはいません");
-     }
+     // else {
+     //  searchList.empty();
+     //   appendNoIndex("一致するユーザーはいません");
+     // }
    })
   .fail(function(){
     alert('ユーザーの検索に失敗しました')

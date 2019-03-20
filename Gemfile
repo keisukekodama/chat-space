@@ -37,12 +37,16 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-gem 'byebug', platform: :mri
-gem 'capistrano'
-gem 'capistrano-rbenv'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano3-unicorn'
+  # gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -61,15 +65,18 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
-gem 'pry-byebug'
+gem 'rspec-rails', '~> 3.5' #
+gem 'rails-controller-testing'
+gem 'faker'#ダミーデータを作成する
 gem 'pry-doc'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'rb-readline'
-gem 'bootsnap'
+# gem 'bootsnap'
+
 
 group :production do
-gem 'unicorn'
+gem 'unicorn' , '~> 5.4.1'
 end
 
