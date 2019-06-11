@@ -33,7 +33,7 @@ image = `<img src="${ message.image }">`;
       var messageId = $('.message:last').data('message-id') || 0
 
       $.ajax({
-        url: location.href,
+        url: location.href, //現在ページURLを参照
         type: 'GET',
         data: {id: messageId},
         dataType: 'json',
@@ -56,4 +56,5 @@ image = `<img src="${ message.image }">`;
     } else {
       clearInterval(interval);
     }},5000);
+    
 });

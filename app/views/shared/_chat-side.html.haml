@@ -13,7 +13,7 @@
           = fa_icon 'cog', class: 'icon'
 
   .chat-side__groups
-    - current_user.groups.each do |group|
+    - current_user.groups.each do |group| # groupsのインスタンス変数を使用しているのではなく、current_userからgroupsの情報を抽出している。
       .chat-side__groups--list
         .chat-side__groups--list-group
           = link_to group_messages_path(group) do
