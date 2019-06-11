@@ -1,5 +1,7 @@
+$(document).on('turbolinks:load', function() {
 $(function(){
   function buildHTML(message){
+    console.log(message)
     var image = '';if (message.image){image = `<img src="${ message.image }">`;}
     // var message_image = message.image ? message.image : ""
     // <img class: 'lower-message__image' src='${message_image}'>これを代入。
@@ -40,6 +42,7 @@ $(function(){
       contentType: false
     })
     .done(function(data) {
+      console.log(data)
       // console.log("非同期done")
       //if (data.length !==0){}で
       var html = buildHTML(data);
@@ -54,4 +57,5 @@ $(function(){
     $('#send').removeAttr("disabled");
     })
   })
+})
 });

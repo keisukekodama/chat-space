@@ -1,4 +1,4 @@
-
+$(document).on('turbolinks:load', function() {
 $(function() {
   var searchList = $("#user-search-result");
 function appendIndex(index){
@@ -63,5 +63,6 @@ $(this).parent().remove();
   $("#chat-group-users").on("click",".user-search-remove",function(){
     // console.log("削除")
 $(this).parent().remove();
+})
 })
 });
