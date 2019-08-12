@@ -1,26 +1,30 @@
-.side-bar {
-  // box-sizing: border-box;
+.chat-side {
+  box-sizing: border-box;
   color: $white;
   width: 300px;
   .header {
     background-color: $side_blue_dark;
-    height: 100px;
+    height: 120px;
     line-height: 100px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     &__name {
       display: inline-block;
-      //font-size: $side_header_font;
+      font-size: $side_header_font;
       font-weight: bold;
     }
     &__lists {
       display: inline-block;
-      float: right;
+      display: flex;
       .list {
         display: inline-block;
+        padding:0 2px;
       }
       .icon {
         color: $white;
-        //font-size: $side_header_font;
+        font-size: $side_header_font;
       }
     }
   }

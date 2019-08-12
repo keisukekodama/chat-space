@@ -1,14 +1,13 @@
 .chat-side
-  .chat-side__user
-    .chat-side__user--content
-      .chat-side__user--content-name
-        = current_user.name
-      %a.chat-side__user--new-group
+  .header
+    %h3.header__name
+      = current_user.name
+    %ul.header__lists
+      %li.list
         = link_to new_group_path do
           = fa_icon 'edit', class: 'icon'
-      %a.chat-side__user--edit-user
+      %li.list
         = link_to edit_user_path(current_user) do
-
           / 引数（ここではcurrent_user)がないと、ActionController::UrlGenerationError in Messages#index とでる。
           = fa_icon 'cog', class: 'icon'
 
