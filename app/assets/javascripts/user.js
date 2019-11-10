@@ -3,7 +3,7 @@ $(function() {
   var searchList = $("#user-search-result");
 function appendIndex(index){
   var html =`
-<div class="chat-group-user clearfix">
+<div class="chat-group-user clearfix ">
   <p class="chat-group-user__name">${index.name}</p>
   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${index.id} data-user-name=${index.name}>追加</a>
 </div>
@@ -53,15 +53,17 @@ function appendNoIndex(index) {
     alert('ユーザーの検索に失敗しました')
   });
 });
-  searchList.on("click",".user-search-add",function(){
+  $(document).on("click",".user-search-add",function(){
     // console.log("追加")
     var userId = $(this).attr("data-user-id");
     var userName = $(this).attr("data-user-name");
 addIndexToGroup(userId, userName);
 $(this).parent().remove();
   })
-  $("#chat-group-users").on("click",".user-search-remove",function(){
-    // console.log("削除")
+  $(document).on("click",".user-search-remove",function(){
+    var a = $(this).parent()
+    console.log(a)
+    console.log($(this).parent())
 $(this).parent().remove();
 })
 })

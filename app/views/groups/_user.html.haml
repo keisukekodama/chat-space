@@ -1,6 +1,5 @@
 - @group.users.each do |user|
-  .chat-group-user.clearfix{id:"chat-group-user-#{user.id}"}
-    = hidden_field_tag :id, name:'group[user_ids][]', value: user.id
+  .chat-group-user.clearfix
     %p.chat-group-user__name=user.name
     - unless user.id == current_user.id
-      .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove{ 'data-user-id': user.id } 削除
+      .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove 削除
