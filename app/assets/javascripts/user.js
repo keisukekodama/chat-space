@@ -26,9 +26,9 @@ function appendNoIndex(index) {
 `
     $("#chat-group-users").append(html);
   }
-  $("#iuser-search-field").on("keyup", function(){
+  $("#user-search-field").on("keyup", function(){
     // console.log("インクル")
-    var input = $("#iuser-search-field").val()
+    var input = $("#user-search-field").val()
     // console.log(input);
     $.ajax({
       type:'GET',
