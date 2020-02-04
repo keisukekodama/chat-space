@@ -41,11 +41,11 @@ image = `<img src="${ message.image }">`;
       })
       .done(function(data) {
         console.log("自動更新done")
-        console.log(data)
+        console.table(data)
          if (data.length > 0){
         var addHtml ='';
         data.forEach(function(message){//dataが複数なのでforEachで単数に変える。
-          console.log(message)
+          console.log(1)
           addHtml += buildHTML(message);
         });
         $('.chat-main__body').append(addHtml)
