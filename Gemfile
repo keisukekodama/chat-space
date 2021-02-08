@@ -69,7 +69,7 @@ gem 'rspec-rails', '~> 3.5' #
 gem 'rails-controller-testing'
 gem 'faker'#ダミーデータを作成する
 gem 'pry-doc'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'rb-readline'
