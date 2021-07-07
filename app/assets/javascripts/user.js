@@ -5,9 +5,10 @@ function appendIndex(index){
   var html =`
 <div class="chat-group-user clearfix ">
   <p class="chat-group-user__name">${index.name}</p>
-  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${index.id} data-user-name=${index.name}>追加</a>
+  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${index.id} data-user-name=${index.name}>追加</div>
 </div>
 `
+console.log(html)
 searchList.append(html);
 }
 function appendNoIndex(index) {
@@ -21,7 +22,7 @@ function appendNoIndex(index) {
   <div class='chat-group-user clearfix '>
   <input name='group[user_ids][]' type='hidden' value='${userId}'>
   <p class='chat-group-user__name'>${userName}</p>
-  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+  <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
 </div>
 `
     $("#chat-group-users").append(html);
